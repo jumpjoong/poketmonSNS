@@ -76,7 +76,8 @@ const Profile = () => {
       }
     }
   }, [who]);
-  if (who !== undefined) {
+  console.log(who.pro_img);
+  if (who !== undefined){
     return (
       <>
         <aside className={Style.profile_container}>
