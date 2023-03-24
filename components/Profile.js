@@ -68,8 +68,11 @@ const Profile = () => {
       getMypoke();
       getPoke();
       if (who !== undefined) {
-        setBadges(who.badge_list.split(","));
-        console.log(who)
+        try{
+          setBadges(who.badge_list.split(","));
+        }catch {
+          console.log(err)
+        }
       }
     }
   }, [who]);
