@@ -70,7 +70,7 @@ const Profile = () => {
       if (who !== undefined) {
         try{
           setBadges(who.badge_list.split(","));
-        }catch {
+        }catch (err){
           console.log(err)
         }
       }
