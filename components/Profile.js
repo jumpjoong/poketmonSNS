@@ -69,6 +69,7 @@ const Profile = () => {
       getPoke();
       if (who !== undefined) {
         setBadges(who.badge_list.split(","));
+        console.log(who)
       }
     }
   }, [who]);
