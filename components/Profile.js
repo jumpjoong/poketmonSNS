@@ -76,7 +76,7 @@ const Profile = () => {
       }
     }
   }, [who]);
-  console.log(who.pro_img);
+  console.log(who);
   if (who !== undefined){
     return (
       <>
@@ -84,7 +84,7 @@ const Profile = () => {
           <div className={Style.profile_wrapper}>
             <div className={Style.profile_wrap}>
               <div className={Style.profile_user_wrap}>
-                <div className={Style.profile_img_wrap}>{<img src={`/img/poke_profile_img/pokballpixel-${who.pro_img && who.pro_img}.png`} alt=""></img>}</div>
+                <div className={Style.profile_img_wrap}>{<img src={`/img/poke_profile_img/pokballpixel-${who.pro_img}.png`} alt="포켓볼" />}</div>
                 <div className={Style.profile_info_wrap}>
                   <div className={Style.profile_name}>{who.name == "" ? "너의 이름은..." : who.name}</div>
                   <div className={Style.profile_email}>
