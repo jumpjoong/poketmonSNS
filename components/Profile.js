@@ -24,7 +24,7 @@ const Profile = () => {
     if (who !== undefined && pageStatus !== "NEWBIE") {
       axios.put("/api/encyclopedia", { id: who.id }).then((res) => {
         if (res.data !== null) {
-          if (res.data.poke_id !== null) {
+          if (res.data.poke_id !== null && res.data.poke_id !== undefined && res.data.poke_id.length !==0) {
             let arr = res.data.poke_id.split(",");
             arr.sort((a, b) => {
               return a - b;
