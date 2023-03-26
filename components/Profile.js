@@ -69,15 +69,15 @@ const Profile = () => {
       getPoke();
       if (who !== undefined) {
         try{
-          who && setBadges(who && who.badge_list.split(","));
-          console.log(who && who.badge_list.split(","))
+          console.log(who)
+          setBadges(who && who.badge_list.split(","));
         }catch (err){
           console.log(err);
         }
       }
     }
   }, [who]);
-  if (who !== undefined){
+  if (badges !== undefined && who !== undefined){
     return (
       <>
         <aside className={Style.profile_container}>
