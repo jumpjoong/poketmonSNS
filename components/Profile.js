@@ -69,7 +69,8 @@ const Profile = () => {
       getPoke();
       if (who !== undefined) {
         try{
-          setBadges(who && who.badge_list.split(","));
+          who && setBadges(who && who.badge_list.split(","));
+          console.log(who && who.badge_list.split(","))
         }catch (err){
           console.log(err);
         }

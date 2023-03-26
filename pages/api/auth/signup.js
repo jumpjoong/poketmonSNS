@@ -62,7 +62,6 @@ async function handler(req, res) {
             rep: body.key,
           },
         });
-        console.log(userUpdate);
         res.json({ message: "success" });
       } catch (err) {
         res.send(err);
