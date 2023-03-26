@@ -76,7 +76,6 @@ const Item = ({ obj, dataGet }) => {
       location.reload();
     } else {
       let aa = myfollowlist.filter((obj) => obj != id);
-      console.log(aa);
       axios.put("/api/follow", { id: session.user.id, data: aa });
       location.reload();
     }

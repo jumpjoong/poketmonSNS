@@ -39,7 +39,6 @@ export default async function handler(req, res) {
     }
   };
   const putData = async () => {
-    console.log(body);
     try {
       const updateBadge = await prisma.user_table.update({
         where: {

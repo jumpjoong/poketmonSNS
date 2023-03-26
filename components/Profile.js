@@ -76,7 +76,7 @@ const Profile = () => {
       }
     }
   }, [who]);
-  console.log(who);
+  // console.log(who);
   if (who !== undefined){
     return (
       <>
