@@ -28,8 +28,8 @@ const InfoContext = ({ children }) => {
         }
       });
   };
-  const getWho = async() => {
-    await axios
+  const getWho = () => {
+    axios
       .get("/api/auth/who", {
         params: {
           id: session.user.id,
