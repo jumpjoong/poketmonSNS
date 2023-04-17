@@ -8,7 +8,7 @@
 <br/>
 
 
-## 💙 프로젝트 소개
+## 📌 프로젝트 소개
 
 
 
@@ -19,7 +19,7 @@
 <br/>
 <br/>
 
-## 🧡 구현 기능 
+## 📎 구현 기능 
 <h5> 로그인, 회원가입
 <h5> 글 작성, 삭제 및 수정
 <h5> 좋아요 기능 (미완성)
@@ -31,7 +31,7 @@
 <br/>
 <br/>
 
-## 💚 사용한 기술 스택
+## 📍 사용한 기술 스택
 | NEXT | MySQL | Next Auth | PRISMA | Chart | SCSS |
 |:---:|:---:|:---:|:---:|:---:|:---:|
 | ![nextdotjs 1](https://user-images.githubusercontent.com/100519998/227893505-a722af05-52a0-4a34-960c-677257fabbc1.svg) | ![mysql 1](https://user-images.githubusercontent.com/100519998/227893543-29dfd37d-6944-4e3e-9566-d014ea43cb97.svg) | 테스트1 |![prisma 1](https://user-images.githubusercontent.com/100519998/227893615-81bc93ab-ede2-41f9-bfb0-6ca64b8fa9b4.svg) | ![chartdotjs 1](https://user-images.githubusercontent.com/100519998/227893748-28255020-ace6-483d-91db-5c708a2681c3.svg) | ![sass 1](https://user-images.githubusercontent.com/100519998/227893866-945f1042-3dbd-4a54-8be7-4a15bfb78d8c.svg) |
