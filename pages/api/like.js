@@ -64,7 +64,7 @@ async function handler(req, res) {
           like_count: result,
         },
       });
-      res.json(favoritelistupdate);
+      res.json(favoritelistupdate, result);
     } catch (err) {
       res.send(err);
     }

@@ -84,17 +84,20 @@ const Item = ({ obj, dataGet }) => {
     setInfoMod(!infoMod);
   };
   const heart = async (e) => {
-    setLike(!like)
+    setLike(!like);
     if (favoritelist.includes(session.user.id.toString())) {
       // 좋아요 취소
       const result = favoritelist.filter((obj) => obj !== session.user.id.toString());
-      await axios.put("api/like", { type: "down", id: obj.id, data: result });
+      await axios.put("api/like", { type: "down", id: obj.id, data: result }).then(res => {
+        console.log(res)
+      });
     } else {
       // 좋아요
-
       favoritelist.push(session.user.id.toString());
       const result = favoritelist.filter((obj) => obj !== "" && obj !== undefined && obj !== null);
-      await axios.put("/api/like", { type: "up", id: obj.id, data: result });
+      await axios.put("/api/like", { type: "up", id: obj.id, data: result }).then(res => {
+        console.log(res)
+      });;
     }
     getFavoriteList();
   };

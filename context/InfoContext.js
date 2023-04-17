@@ -1,3 +1,4 @@
+import Signup from "@/pages/signup";
 import axios from "axios";
 import { useSession } from "next-auth/react";
 import React, { createContext, useContext, useEffect, useState } from "react";

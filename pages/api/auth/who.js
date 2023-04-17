@@ -25,10 +25,10 @@ export default async function handler(req, res) {
           select: {
             id: true,
             pro_img: true,
-            email: true,
             name: true,
-            rep: true,
+            email: true,
             credit: true,
+            rep: true,  
             badge_list: true,
           },
         });
