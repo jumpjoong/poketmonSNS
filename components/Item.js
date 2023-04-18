@@ -88,6 +88,7 @@ const Item = ({ obj, dataGet }) => {
     if (favoritelist.includes(session.user.id.toString())) {
       // 좋아요 취소
       const result = favoritelist.filter((obj) => obj !== session.user.id.toString());
+      console.log(result)
       await axios.put("api/like", { type: "down", id: obj.id, data: result }).then(res => {
         setLikeCount(res.data.getLike.like_count);
       });
@@ -95,6 +96,7 @@ const Item = ({ obj, dataGet }) => {
       // 좋아요
       favoritelist.push(session.user.id.toString());
       const result = favoritelist.filter((obj) => obj !== "" && obj !== undefined && obj !== null);
+      console.log(result)
       await axios.put("/api/like", { type: "up", id: obj.id, data: result }).then(res => {
         setLikeCount(res.data.getLike.like_count);
       });;
@@ -122,9 +124,7 @@ const Item = ({ obj, dataGet }) => {
             </div>
             <section className={styles.btn_m}>
                 <p>
-                  {
-                    like ? favoritelist.includes(session.user.id.toString()) ? obj.like_count+1 : obj.like_count-1 : obj.like_count
-                  }
+                {likeCount}
                 </p>
               <button className={favoritelist.includes(session.user.id.toString())   ? styles.fillheart : styles.heart} onClick={heart}>
               </button>

@@ -20,7 +20,7 @@ const Encyclopedia = () => {
   const [status, setStatus] = useState(false);
   //포켓몬 크레딧 - 가지고 있는 크레딧
   const [haveCredit, setHaveCredit] = useState(0);
-
+  
   //보유중인 포켓몬(테이블명 : have_poke)에 id+poke_id  가져오기
   const havePokeGet = () => {
     axios.put("/api/encyclopedia", { id: who.id }).then((res) => {
