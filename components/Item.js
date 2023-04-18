@@ -17,7 +17,7 @@ const Item = ({ obj, dataGet }) => {
   const dateAll = moment(obj.date).add(9, "hours").fromNow();
   const dateFollow = moment(obj.date).fromNow();
   const [like, setLike] = useState(false);
-  const [a, b] = useState()
+  const [likeCount, setLikeCount] = useState(obj.like_count)
 
   const getContentOwner = () => {
     axios
@@ -89,14 +89,14 @@ const Item = ({ obj, dataGet }) => {
       // 좋아요 취소
       const result = favoritelist.filter((obj) => obj !== session.user.id.toString());
       await axios.put("api/like", { type: "down", id: obj.id, data: result }).then(res => {
-        console.log(res)
+        setLikeCount(res.data.getLike.like_count);
       });
     } else {
       // 좋아요
       favoritelist.push(session.user.id.toString());
       const result = favoritelist.filter((obj) => obj !== "" && obj !== undefined && obj !== null);
       await axios.put("/api/like", { type: "up", id: obj.id, data: result }).then(res => {
-        console.log(res)
+        setLikeCount(res.data.getLike.like_count);
       });;
     }
     getFavoriteList();
@@ -157,9 +157,7 @@ const Item = ({ obj, dataGet }) => {
           <pre className={styles.detail}>{obj.content}</pre>
           <section className={styles.btn}>
               <p>
-                {
-                  like ? favoritelist.includes(session.user.id.toString()) ? obj.like_count + 1 : obj.like_count - 1 : obj.like_count
-                }
+                {likeCount}
               </p>
             <button className={favoritelist.includes(session.user.id.toString()) ? styles.fillheart : styles.heart} onClick={heart}>
             </button>
