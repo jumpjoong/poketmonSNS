@@ -7,20 +7,25 @@ import { Statusgroup } from "@/context/StatusContext";
 const Trend = () => {
   const [trendlist, setTrendlist] = useState();
   const { data } = useContext(Statusgroup);
-
+  let maxTrendLength = 5
   const getTrendlist = () => {
     let arr = [];
     axios.get("/api/").then((res) => {
       res.data.sort((a, b) => {
         return b.like_count - a.like_count;
       });
-      for (let i = 0; i < 5; i++) {
-        arr[i] = res.data[i];
+      if(res.data.length > maxTrendLength) {
+        for (let i = 0; i < maxTrendLength; i++) {
+          arr[i] = res.data[i];
+        }
+      }else {
+        for (let i = 0; i < res.data.length; i++) {
+          arr[i] = res.data[i];
+        }
       }
       setTrendlist(arr);
     });
   };
-
   useEffect(() => {
     getTrendlist();
   }, [data]);

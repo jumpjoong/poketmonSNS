@@ -5,7 +5,6 @@ import { Statusgroup } from "@/context/StatusContext";
 import { InfoUser } from "@/context/InfoContext";
 import axios from "axios";
 import moment from "moment";
-import Followlist from "./Followlist";
 
 const Item = ({ obj, dataGet }) => {
   const { data: session } = useSession();
@@ -126,7 +125,7 @@ const Item = ({ obj, dataGet }) => {
                 <p>
                 {likeCount}
                 </p>
-              <button className={favoritelist.includes(session.user.id.toString())   ? styles.fillheart : styles.heart} onClick={heart}>
+              <button className={favoritelist.includes(session.user.id.toString()) ? styles.fillheart : styles.heart} onClick={heart}>
               </button>
             </section>
             <div className={styles.info_mod_wrap} onClick={infoModModal}>

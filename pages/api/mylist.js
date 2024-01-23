@@ -5,12 +5,13 @@ async function handler(req, res) {
   const { method, body, query } = req;
 
   const getData = async () => {
-    const mylist = await prisma.list_table.findMany({
+    const myList = await prisma.list_table.findMany({
       where: {
         user_id: Number(query.id),
       },
     });
-    res.json(mylist);
+    // console.log(myList)
+    res.json(myList);
   };
 
   switch (method) {

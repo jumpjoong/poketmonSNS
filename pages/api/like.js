@@ -65,7 +65,7 @@ async function handler(req, res) {
         },
       });
       //좋아요 숫자 가져오기
-      const getLike = await  prisma.list_table.findUnique({
+      const getLike = await prisma.list_table.findUnique({
         where: {
           id: Number(body.id),
         },
